@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "432482153211",
+    "firebase_url": "https://gerenciador-ordem-servicos-default-rtdb.firebaseio.com",
+    "project_id": "gerenciador-ordem-servicos",
+    "storage_bucket": "gerenciador-ordem-servicos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432482153211:android:fa38de563ccd09535db65e",
+        "android_client_info": {
+          "package_name": "com.example.sistema_ordem_de_servico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432482153211-7mgao2vu2qqnautths40akbbricibra4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnBkrsf_h2UqlkxjuhFsriOjA5UdVHG8E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432482153211-7mgao2vu2qqnautths40akbbricibra4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "432482153211-1ldf0c5ijdgh8u0uocao2iml5a9e8k3u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.sistemaOrdemDeServico.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
