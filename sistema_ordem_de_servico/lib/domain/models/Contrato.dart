@@ -1,14 +1,14 @@
-import 'package:sistema_ordem_de_servico/domain/models/Usuario.dart';
 import 'package:sistema_ordem_de_servico/domain/models/Servico.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Contrato {
   String? numero;
   String? titular;
   final String tipoServico;
   final String cnpj;
-  final Usuario fiscal;
+  final User fiscal;
   final List<Servico>? servicos;
-  final List<Usuario>? prestadoresDeServico;
+  final List<User>? prestadoresDeServico;
 
   Contrato({
     required this.cnpj,

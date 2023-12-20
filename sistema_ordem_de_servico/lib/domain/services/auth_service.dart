@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sistema_ordem_de_servico/common/providers.dart';
 import 'package:sistema_ordem_de_servico/common/exceptions.dart';
+import 'package:sistema_ordem_de_servico/domain/models/papel_usuario.dart';
 
 class AuthStateService {
   final bool isAuth;
@@ -28,11 +29,18 @@ class AuthNotifier extends AsyncNotifier<AuthStateService> {
     print("Recuperando email $ref.read(authRepositoryProvider).getUser!.email");
   }
 
+  void _atribuirPapel(dynamic usuario) {
+    if (usuario != null) {
+      PapelUsuario papel = PapelUsuario(usuario: usuario);
+    }
+    //call save to database interface
+  }
+
   Future<void> registrarComEmailSenha(String email, String senha) async {
+    final auth = ref.read(authRepositoryProvider);
     try {
-      await ref
-          .read(authRepositoryProvider)
-          .createUserWithEmailAndPassword(email: email, password: senha);
+      await auth.signUpEmailSenha(email: email, senha: senha);
+      _atribuirPapel(auth.getUser);
       _getUser();
     } on Exception catch (e) {
       throw AuthException(e.toString());
@@ -43,7 +51,7 @@ class AuthNotifier extends AsyncNotifier<AuthStateService> {
     try {
       await ref
           .read(authRepositoryProvider)
-          .signInWithEmailAndPassword(email: email, password: senha);
+          .signInEmailSenha(email: email, senha: senha);
       _getUser();
     } on Exception catch (e) {
       throw AuthException(e.toString());
